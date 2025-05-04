@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+  <title>{{ title or 'Flask Crypto Bank' }}</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Strona główna</a>
+        {% if session.user %}
+          <a href="/bank">Panel bazy danych</a>
+          <a href="/logout">Wyloguj</a>
+        {% else %}
+          <a href="/login">Logowanie</a>
+          <a href="/register">Rejestracja</a>
+        {% endif %}
+      </nav>
+      
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, msg in messages %}
+            <li class="{{ category }}">{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

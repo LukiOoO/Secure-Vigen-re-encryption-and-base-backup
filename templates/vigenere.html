@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Szyfr Vigenère</h1>
+<form id="vigenere-form" method="POST">
+  <label for="text">Tekst:</label>
+  <textarea id="text" name="text" placeholder="Wpisz tekst..." required></textarea>
+
+  <label for="key-input">Klucz (tylko litery):</label>
+  <input type="text" id="key-input" name="key" placeholder="Klucz..." required>
+
+  <div id="key-strength-meter" class="strength-meter">
+    <div id="key-strength-bar"></div>
+  </div>
+  <p id="key-strength-text">&nbsp;</p>
+
+  <label for="mode">Tryb:</label>
+  <select id="mode" name="mode">
+    <option value="encrypt">Szyfruj</option>
+    <option value="decrypt">Deszyfruj</option>
+  </select>
+
+  <button type="submit">Wykonaj</button>
+</form>
+
+{% if result %}
+  <h2>Wynik:</h2>
+  <pre>{{ result }}</pre>
+{% endif %}
+{% endblock %}

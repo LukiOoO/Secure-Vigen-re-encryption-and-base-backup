@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Witaj, {{ user }}!</h1>
+
+<form method="POST">
+  <button name="backup" type="submit">Backup bazy danych</button>
+</form>
+
+<form method="POST" enctype="multipart/form-data">
+  <label for="restore">Przywróć bazę danych:</label>
+  <input type="file" id="restore" name="restore">
+  <button type="submit">Przywróć</button>
+</form>
+{% endblock %}

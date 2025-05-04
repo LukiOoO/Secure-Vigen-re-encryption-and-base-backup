@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Rejestracja</h1>
+<form id="auth-form" method="POST">
+  <label for="username">Nazwa użytkownika:</label>
+  <input type="text" id="username" name="username" placeholder="Nazwa użytkownika" required>
+
+  <label for="password">Hasło:</label>
+  <input id="password" type="password" name="password" placeholder="Hasło" required>
+
+  <div id="strength-meter" class="strength-meter">
+    <div id="strength-bar"></div>
+  </div>
+  <p id="strength-text">&nbsp;</p>
+
+  <button type="submit">Zarejestruj</button>
+</form>
+{% endblock %}
