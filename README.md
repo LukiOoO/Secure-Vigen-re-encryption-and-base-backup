@@ -13,10 +13,7 @@ A simple Flask web application demonstrating:
 
 1. [Features](#features)  
 2. [Prerequisites](#prerequisites)  
-3. [Installation](#installation)  
-4. [Running the App](#running-the-app)  
-5. [Usage](#usage)  
-6. [Project Structure](#project-structure)  
+3. [Installation / Running the App](#installation)  
 
 ---
 
@@ -38,7 +35,7 @@ A simple Flask web application demonstrating:
 
 ---
 
-## Installation
+## Installation / Running the App
 
 1. **Clone the repository**  
    git clone https://github.com/yourusername/flask-crypto-db.git
@@ -48,3 +45,5 @@ A simple Flask web application demonstrating:
    .\env\Scripts\activate
    pip install -r requirements.txt
    python app.py
+
+   By default the app runs at http://127.0.0.1:5000
